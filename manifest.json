@@ -1,0 +1,15 @@
+{
+  "api": "1.0.0",
+  "widgetApi": "1.0.0",
+  "editorType": [
+    "figma"
+  ],
+  "containsWidget": true,
+  "id": "deel-stamp",
+  "name": "Deel Stamp",
+  "main": "build/main.js",
+  "ui": "build/ui.js",
+  "permissions": [
+    "currentuser"
+  ]
+}
