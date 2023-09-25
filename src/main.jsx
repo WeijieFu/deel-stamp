@@ -217,6 +217,7 @@ function DeelStamp() {
         horizontalAlignText={"left"}
         fill={textGradientStyles[status]}
         letterSpacing={"-2%"}
+        lineHeight={"100%"}
       >
         {status === "Updated" ? date : status}
       </Text>
@@ -226,7 +227,7 @@ function DeelStamp() {
         spacing={8}
       >
         <Text
-          fontSize={10}
+          fontSize={6}
           horizontalAlignText={"left"}
         >
           {""}
@@ -234,7 +235,7 @@ function DeelStamp() {
         <Text
           fontSize={20}
           horizontalAlignText={"left"}
-          fill={textStyles[status]}
+          fill={textGradientStyles[status]}
           opacity={0.6}
         >
           {name}

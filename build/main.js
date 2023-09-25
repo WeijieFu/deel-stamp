@@ -288,7 +288,8 @@ function DeelStamp() {
         fontWeight: "bold",
         horizontalAlignText: "left",
         fill: textGradientStyles[status],
-        letterSpacing: "-2%"
+        letterSpacing: "-2%",
+        lineHeight: "100%"
       },
       status === "Updated" ? date : status
     ),
@@ -302,7 +303,7 @@ function DeelStamp() {
       /* @__PURE__ */ figma.widget.h(
         Text,
         {
-          fontSize: 10,
+          fontSize: 6,
           horizontalAlignText: "left"
         },
         ""
@@ -312,7 +313,7 @@ function DeelStamp() {
         {
           fontSize: 20,
           horizontalAlignText: "left",
-          fill: textStyles[status],
+          fill: textGradientStyles[status],
           opacity: 0.6
         },
         name
