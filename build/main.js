@@ -179,7 +179,6 @@ function DeelStamp() {
         ]);
         setId(widget2);
       }
-      console.log(log);
     }
   };
   const backgroundStyles = {
@@ -234,7 +233,8 @@ function DeelStamp() {
         fontSize: 40,
         fontWeight: "bold",
         horizontalAlignText: "left",
-        fill: textStyles[status]
+        fill: textStyles[status],
+        letterSpacing: "2%"
       },
       status === "updated" ? date.toUpperCase() : status.toUpperCase()
     ),

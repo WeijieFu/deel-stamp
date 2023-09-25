@@ -105,8 +105,6 @@ function DeelStamp() {
         ])
         setId(widget)
       }
-
-      console.log(log)
     }
   }
 
@@ -163,6 +161,7 @@ function DeelStamp() {
         fontWeight={"bold"}
         horizontalAlignText={"left"}
         fill={textStyles[status]}
+        letterSpacing={"2%"}
       >
         {status === "updated" ? date.toUpperCase() : status.toUpperCase()}
       </Text>
