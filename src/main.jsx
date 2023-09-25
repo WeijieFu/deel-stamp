@@ -3,7 +3,8 @@
 import { once, showUI } from "@create-figma-plugin/utilities"
 
 const { widget } = figma
-const { AutoLayout, Text, useSyncedState, usePropertyMenu, useEffect } = widget
+const { AutoLayout, Text, useSyncedState, usePropertyMenu, useWidgetId } =
+  widget
 
 export default function () {
   widget.register(DeelStamp)
@@ -16,6 +17,8 @@ function DeelStamp() {
   const [name, setName] = useSyncedState("name", "")
   const [date, setDate] = useSyncedState("date", _getDate())
   const [log, setLog] = useSyncedState("log", [])
+  const widget = useWidgetId()
+  const [id, setId] = useSyncedState("id", widget)
 
   const statusOptions = [
     { option: "wip", label: "WIP" },
@@ -32,10 +35,16 @@ function DeelStamp() {
           resolve()
         }
       } else if (propertyName === "update") {
-        handleUpdateClick("update", date)
+        handleUpdateClick("updated", date)
         resolve()
       } else if (propertyName === "changelog") {
-        showUI({ height: 400, width: 320 }, { log: log })
+        if (widget !== id) {
+          setLog([])
+          setId(widget)
+          showUI({ height: 400, width: 320 }, { log: [] })
+        } else {
+          showUI({ height: 400, width: 320 }, { log: log })
+        }
       }
     })
   }
@@ -77,14 +86,25 @@ function DeelStamp() {
     if (figma.currentUser) {
       setName(figma.currentUser.name)
       setDate(_getDate())
-      setLog([
-        ...log,
-        {
-          value: value,
-          name: figma.currentUser.name,
-          date: date,
-        },
-      ])
+      if (id == widget) {
+        setLog([
+          ...log,
+          {
+            value: value,
+            name: figma.currentUser.name,
+            date: date,
+          },
+        ])
+      } else {
+        setLog([
+          {
+            value: value,
+            name: figma.currentUser.name,
+            date: date,
+          },
+        ])
+        setId(widget)
+      }
 
       console.log(log)
     }

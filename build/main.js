@@ -95,6 +95,8 @@ function DeelStamp() {
   const [name, setName] = useSyncedState("name", "");
   const [date, setDate] = useSyncedState("date", _getDate());
   const [log, setLog] = useSyncedState("log", []);
+  const widget2 = useWidgetId();
+  const [id, setId] = useSyncedState("id", widget2);
   const statusOptions = [
     { option: "wip", label: "WIP" },
     { option: "outdated", label: "Outdated" },
@@ -109,10 +111,16 @@ function DeelStamp() {
           resolve();
         }
       } else if (propertyName === "update") {
-        handleUpdateClick("update", date);
+        handleUpdateClick("updated", date);
         resolve();
       } else if (propertyName === "changelog") {
-        showUI({ height: 400, width: 320 }, { log });
+        if (widget2 !== id) {
+          setLog([]);
+          setId(widget2);
+          showUI({ height: 400, width: 320 }, { log: [] });
+        } else {
+          showUI({ height: 400, width: 320 }, { log });
+        }
       }
     });
   };
@@ -152,14 +160,25 @@ function DeelStamp() {
     if (figma.currentUser) {
       setName(figma.currentUser.name);
       setDate(_getDate());
-      setLog([
-        ...log,
-        {
-          value,
-          name: figma.currentUser.name,
-          date: date2
-        }
-      ]);
+      if (id == widget2) {
+        setLog([
+          ...log,
+          {
+            value,
+            name: figma.currentUser.name,
+            date: date2
+          }
+        ]);
+      } else {
+        setLog([
+          {
+            value,
+            name: figma.currentUser.name,
+            date: date2
+          }
+        ]);
+        setId(widget2);
+      }
       console.log(log);
     }
   };
@@ -248,13 +267,13 @@ function DeelStamp() {
     )
   );
 }
-var widget, AutoLayout, Text, useSyncedState, usePropertyMenu, useEffect;
+var widget, AutoLayout, Text, useSyncedState, usePropertyMenu, useWidgetId;
 var init_main = __esm({
   "src/main.jsx"() {
     init_lib();
     init_data();
     ({ widget } = figma);
-    ({ AutoLayout, Text, useSyncedState, usePropertyMenu, useEffect } = widget);
+    ({ AutoLayout, Text, useSyncedState, usePropertyMenu, useWidgetId } = widget);
   }
 });
 
