@@ -1,0 +1,26 @@
+.header{
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: var(--figma-color-bg);
+    padding: 0.25rem 0;
+    border-bottom: solid 1px var(--figma-color-border);
+    color: var(--figma-color-text-disabled)
+}
+
+.row{
+    display: flex;
+    padding: 0.125rem 0;
+}
+.row:hover{
+    background-color: var(--figma-color-bg-hover);
+}
+.status{
+    flex: 1;
+}
+.date{
+    flex:1;
+}
+.name{
+    flex:1;
+}

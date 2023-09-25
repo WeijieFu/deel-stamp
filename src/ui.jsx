@@ -10,31 +10,26 @@ import { emit } from "@create-figma-plugin/utilities"
 import { h } from "preact"
 import { useCallback, useState } from "preact/hooks"
 
-function Plugin(props) {
-  const [text, setText] = useState(props.text)
-  const handleUpdateButtonClick = useCallback(
-    function () {
-      emit("UPDATE_TEXT", text)
-    },
-    [text]
-  )
+import styles from "./styles.css"
+function Plugin({ log }) {
   return (
     <Container space='medium'>
-      <VerticalSpace space='large' />
-      <TextboxMultiline
-        {...useInitialFocus()}
-        onValueInput={setText}
-        value={text}
-        variant='border'
-      />
-      <VerticalSpace space='large' />
-      <Button
-        fullWidth
-        onClick={handleUpdateButtonClick}
-      >
-        Update Text
-      </Button>
-      <VerticalSpace space='small' />
+      <VerticalSpace space='medium' />
+      <div class={styles.header}>
+        <span class={styles.status}>Change To</span>
+        <span class={styles.date}>On</span>
+        <span class={styles.name}>By</span>
+      </div>
+      {log.map((item, index) => {
+        return (
+          <div class={styles.row}>
+            <span class={styles.status}>{item.value.toUpperCase()}</span>
+            <span class={styles.date}>{item.date}</span>
+            <span class={styles.name}>{item.name}</span>
+          </div>
+        )
+      })}
+      <VerticalSpace space='medium' />
     </Container>
   )
 }
