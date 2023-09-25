@@ -191,6 +191,60 @@ function DeelStamp() {
     outdated: "#FFFFFF",
     updated: "#FFFFFF"
   };
+  const textGradientStyles = {
+    outdated: {
+      type: "gradient-linear",
+      gradientHandlePositions: [
+        { x: 0, y: 0 },
+        { x: 1, y: 1 },
+        { x: 0, y: 1 }
+      ],
+      gradientStops: [
+        { position: 0, color: { r: 1, g: 1, b: 1, a: 1 } },
+        { position: 1, color: { r: 1, g: 1, b: 1, a: 0.800000011920929 } }
+      ]
+    },
+    wip: {
+      type: "gradient-linear",
+      gradientHandlePositions: [
+        { x: 0, y: 0 },
+        { x: 1, y: 1 },
+        { x: 0, y: 1 }
+      ],
+      gradientStops: [
+        {
+          position: 0,
+          color: {
+            r: 0.0833333358168602,
+            g: 0.0833333358168602,
+            b: 0.0833333358168602,
+            a: 1
+          }
+        },
+        {
+          position: 1,
+          color: {
+            r: 0.0833333358168602,
+            g: 0.0833333358168602,
+            b: 0.0833333358168602,
+            a: 0.800000011920929
+          }
+        }
+      ]
+    },
+    updated: {
+      type: "gradient-linear",
+      gradientHandlePositions: [
+        { x: 0, y: 0 },
+        { x: 1, y: 1 },
+        { x: 0, y: 1 }
+      ],
+      gradientStops: [
+        { position: 0, color: { r: 1, g: 1, b: 1, a: 1 } },
+        { position: 1, color: { r: 1, g: 1, b: 1, a: 0.800000011920929 } }
+      ]
+    }
+  };
   const containerEffect = [
     {
       blur: 20,
@@ -233,7 +287,7 @@ function DeelStamp() {
         fontSize: 40,
         fontWeight: "bold",
         horizontalAlignText: "left",
-        fill: textStyles[status],
+        fill: textGradientStyles[status],
         letterSpacing: "2%"
       },
       status === "updated" ? date.toUpperCase() : status.toUpperCase()
