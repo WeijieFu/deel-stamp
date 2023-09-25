@@ -65,6 +65,7 @@ function DeelStamp() {
     outdated: "#CB0000",
     updated: "#00A700",
   }
+
   const textStyles = {
     wip: "#000000",
     outdated: "#FFFFFF",
@@ -101,12 +102,12 @@ function DeelStamp() {
     >
       <Text
         fontSize={40}
-        width={280}
+        // width={280}
         fontWeight={"bold"}
         horizontalAlignText={"left"}
         fill={textStyles[status]}
       >
-        {status.toUpperCase()}
+        {status === "updated" ? date : status.toUpperCase()}
       </Text>
       <AutoLayout
         name='Details'
@@ -114,19 +115,19 @@ function DeelStamp() {
         spacing={8}
       >
         <Text
+          fontSize={10}
+          horizontalAlignText={"left"}
+          fill={textStyles[status]}
+        >
+          {""}
+        </Text>
+        <Text
           fontSize={20}
           horizontalAlignText={"left"}
           fill={textStyles[status]}
+          opacity={0.5}
         >
           {name}
-        </Text>
-        <Text
-          fontSize={16}
-          horizontalAlignText={"left"}
-          fill={textStyles[status]}
-          opacity={0.75}
-        >
-          {date}
         </Text>
       </AutoLayout>
     </AutoLayout>

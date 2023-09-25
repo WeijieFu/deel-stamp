@@ -138,12 +138,11 @@ function DeelStamp() {
       Text,
       {
         fontSize: 40,
-        width: 280,
         fontWeight: "bold",
         horizontalAlignText: "left",
         fill: textStyles[status]
       },
-      status.toUpperCase()
+      status === "updated" ? date : status.toUpperCase()
     ),
     /* @__PURE__ */ figma.widget.h(
       AutoLayout,
@@ -155,21 +154,21 @@ function DeelStamp() {
       /* @__PURE__ */ figma.widget.h(
         Text,
         {
-          fontSize: 20,
+          fontSize: 10,
           horizontalAlignText: "left",
           fill: textStyles[status]
         },
-        name
+        ""
       ),
       /* @__PURE__ */ figma.widget.h(
         Text,
         {
-          fontSize: 16,
+          fontSize: 20,
           horizontalAlignText: "left",
           fill: textStyles[status],
-          opacity: 0.75
+          opacity: 0.5
         },
-        date
+        name
       )
     )
   );
