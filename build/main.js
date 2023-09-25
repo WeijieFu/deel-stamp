@@ -91,16 +91,16 @@ function main_default() {
   widget.register(DeelStamp);
 }
 function DeelStamp() {
-  const [status, setStatus] = useSyncedState("status", "wip");
+  const [status, setStatus] = useSyncedState("status", "In progress");
   const [name, setName] = useSyncedState("name", "");
   const [date, setDate] = useSyncedState("date", _getDate());
   const [log, setLog] = useSyncedState("log", []);
   const widget2 = useWidgetId();
   const [id, setId] = useSyncedState("id", widget2);
   const statusOptions = [
-    { option: "wip", label: "WIP" },
-    { option: "outdated", label: "Outdated" },
-    { option: "updated", label: "Updated" }
+    { option: "In progress", label: "In progress" },
+    { option: "Outdated", label: "Outdated" },
+    { option: "Updated", label: "Updated" }
   ];
   const onChange = async ({ propertyName, propertyValue }) => {
     await new Promise(function(resolve) {
@@ -111,7 +111,7 @@ function DeelStamp() {
           resolve();
         }
       } else if (propertyName === "update") {
-        handleUpdateClick("updated", date);
+        handleUpdateClick("Updated", date);
         resolve();
       } else if (propertyName === "changelog") {
         if (widget2 !== id) {
@@ -182,17 +182,17 @@ function DeelStamp() {
     }
   };
   const backgroundStyles = {
-    wip: "#FFB800",
-    outdated: "#CB0000",
-    updated: "#00A700"
+    "In progress": "#FFB800",
+    Outdated: "#CB0000",
+    Updated: "#00A700"
   };
   const textStyles = {
-    wip: "#000000",
-    outdated: "#FFFFFF",
-    updated: "#FFFFFF"
+    "In progress": "#000000",
+    Outdated: "#FFFFFF",
+    Updated: "#FFFFFF"
   };
   const textGradientStyles = {
-    outdated: {
+    Outdated: {
       type: "gradient-linear",
       gradientHandlePositions: [
         { x: 0, y: 0 },
@@ -204,7 +204,7 @@ function DeelStamp() {
         { position: 1, color: { r: 1, g: 1, b: 1, a: 0.800000011920929 } }
       ]
     },
-    wip: {
+    "In progress": {
       type: "gradient-linear",
       gradientHandlePositions: [
         { x: 0, y: 0 },
@@ -232,7 +232,7 @@ function DeelStamp() {
         }
       ]
     },
-    updated: {
+    Updated: {
       type: "gradient-linear",
       gradientHandlePositions: [
         { x: 0, y: 0 },
@@ -288,9 +288,9 @@ function DeelStamp() {
         fontWeight: "bold",
         horizontalAlignText: "left",
         fill: textGradientStyles[status],
-        letterSpacing: "2%"
+        letterSpacing: "-2%"
       },
-      status === "updated" ? date.toUpperCase() : status.toUpperCase()
+      status === "Updated" ? date : status
     ),
     /* @__PURE__ */ figma.widget.h(
       AutoLayout,
@@ -303,8 +303,7 @@ function DeelStamp() {
         Text,
         {
           fontSize: 10,
-          horizontalAlignText: "left",
-          fill: textStyles[status]
+          horizontalAlignText: "left"
         },
         ""
       ),

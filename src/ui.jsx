@@ -23,7 +23,7 @@ function Plugin({ log }) {
       {log.map((item, index) => {
         return (
           <div class={styles.row}>
-            <span class={styles.status}>{item.value.toUpperCase()}</span>
+            <span class={styles.status}>{item.value}</span>
             <span class={styles.date}>{item.date}</span>
             <span class={styles.name}>{item.name}</span>
           </div>

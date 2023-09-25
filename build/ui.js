@@ -404,10 +404,10 @@
     }
   });
 
-  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/6ee1c0ae-7ac1-460b-bbc1-04b7abc7d85a/container.module.js
+  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/dfe44699-aa59-4558-929b-b22d424b723c/container.module.js
   var container_module_default;
   var init_container_module = __esm({
-    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/6ee1c0ae-7ac1-460b-bbc1-04b7abc7d85a/container.module.js"() {
+    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/dfe44699-aa59-4558-929b-b22d424b723c/container.module.js"() {
       if (document.getElementById("4fec713f99") === null) {
         const element = document.createElement("style");
         element.id = "4fec713f99";
@@ -446,10 +446,10 @@
     }
   });
 
-  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/ddaec3e3-df45-4934-be25-8cc3d5d06223/vertical-space.module.js
+  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/70c4997e-1842-4db4-a968-2c0cca98ae39/vertical-space.module.js
   var vertical_space_module_default;
   var init_vertical_space_module = __esm({
-    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/ddaec3e3-df45-4934-be25-8cc3d5d06223/vertical-space.module.js"() {
+    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/70c4997e-1842-4db4-a968-2c0cca98ae39/vertical-space.module.js"() {
       if (document.getElementById("9e1711e47e") === null) {
         const element = document.createElement("style");
         element.id = "9e1711e47e";
@@ -488,9 +488,9 @@
     }
   });
 
-  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/163cb11c-10f0-4d02-9050-2f9dd71b0619/base.js
+  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/2a493bec-32e3-46be-b27d-04b5315fbde1/base.js
   var init_base = __esm({
-    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/163cb11c-10f0-4d02-9050-2f9dd71b0619/base.js"() {
+    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/2a493bec-32e3-46be-b27d-04b5315fbde1/base.js"() {
       if (document.getElementById("41dc99a8d9") === null) {
         const element = document.createElement("style");
         element.id = "41dc99a8d9";
@@ -627,10 +627,10 @@ svg {
     }
   });
 
-  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/d7e251ca-3a9e-4f71-a69c-d56540792937/styles.js
+  // ../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/c656e837-a1a3-4d95-97e4-0549f3e1b5bc/styles.js
   var styles_default;
   var init_styles = __esm({
-    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/d7e251ca-3a9e-4f71-a69c-d56540792937/styles.js"() {
+    "../../../../../private/var/folders/q3/phj1q3716nq2zh1ttfzj02g80000gn/T/c656e837-a1a3-4d95-97e4-0549f3e1b5bc/styles.js"() {
       if (document.getElementById("da8fdbb2d9") === null) {
         const element = document.createElement("style");
         element.id = "da8fdbb2d9";
@@ -674,7 +674,7 @@ svg {
   });
   function Plugin({ log }) {
     return /* @__PURE__ */ y(Container, { space: "medium" }, /* @__PURE__ */ y(VerticalSpace, { space: "medium" }), /* @__PURE__ */ y("div", { class: styles_default.header }, /* @__PURE__ */ y("span", { class: styles_default.status }, "Change To"), /* @__PURE__ */ y("span", { class: styles_default.date }, "On"), /* @__PURE__ */ y("span", { class: styles_default.name }, "By")), log.map((item, index) => {
-      return /* @__PURE__ */ y("div", { class: styles_default.row }, /* @__PURE__ */ y("span", { class: styles_default.status }, item.value.toUpperCase()), /* @__PURE__ */ y("span", { class: styles_default.date }, item.date), /* @__PURE__ */ y("span", { class: styles_default.name }, item.name));
+      return /* @__PURE__ */ y("div", { class: styles_default.row }, /* @__PURE__ */ y("span", { class: styles_default.status }, item.value), /* @__PURE__ */ y("span", { class: styles_default.date }, item.date), /* @__PURE__ */ y("span", { class: styles_default.name }, item.name));
     }), /* @__PURE__ */ y(VerticalSpace, { space: "medium" }));
   }
   var ui_default;
